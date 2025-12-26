@@ -16,7 +16,7 @@ load_dotenv()
 st.set_page_config(page_title="NAMA Compliance Agent", layout="wide")
 
 # API Configuration
-api_key = "AIzaSyD705ozoByJFLO-XpkmvQ76QPEb0uqzV1c" 
+api_key = st.secrets["api_key"]
 genai.configure(api_key=api_key)
 
 REQUIRED_DOCS = [
