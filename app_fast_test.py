@@ -10,6 +10,15 @@ from datetime import datetime, date
 from dotenv import load_dotenv
 import pypdf # NEW LIBRARY
 import io
+import pytesseract
+import shutil
+
+# Explicitly set tesseract path for Linux (Streamlit Cloud)
+tesseract_path = shutil.which("tesseract")
+if tesseract_path:
+    pytesseract.pytesseract.tesseract_cmd = tesseract_path
+else:
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 # --- 1. CONFIGURATION & SETUP ---
 load_dotenv()
